@@ -93,6 +93,20 @@ public class ReadJson {
                 System.out.println(":" + test);
                 // System.out.println(person.getInt("key"));
             }
+
+            System.out.println("Reached vehicles section");
+
+            System.out.println(jsonObject.get("vehicles"));
+
+            org.json.simple.JSONArray msg1 = (org.json.simple.JSONArray) jsonObject.get("starships");
+            int x = msg1.size(); //(msg).length();
+            for (int i = 0; i < x; ++i) {
+                System.out.println("!");
+                String test1 = (String) msg1.get(i);
+                System.out.println("!" + test1);
+            }
+
+
             String height = (String) jsonObject.get("height");
             System.out.println(name);
 
@@ -102,12 +116,7 @@ public class ReadJson {
             String eyeColor = (String) jsonObject.get("eye_color");
             System.out.println(eyeColor);
 
-            org.json.simple.JSONArray msg1 = (org.json.simple.JSONArray) jsonObject.get("vehicles");
-            int x = msg1.size(); //(msg).length();
-            for (int i = 0; i < x; ++i) {
-                String test = (String) msg1.get(i);
-                System.out.println(":" + test);
-            }
+
         }
 
         catch(Exception e){
